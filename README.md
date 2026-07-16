@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Create Tomecka App
 
-## Getting Started
+A simple Next.js boilerplate with TypeScript, Tailwind CSS, shadcn/ui, and a
+small set of reusable layout components and utilities.
 
-First, run the development server:
+## Getting started
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Create your local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Update the values in `.env.local`, then start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## npm scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command             | Description                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| `npm run pre`       | Formats the project, runs ESLint, and checks TypeScript without generating output. |
+| `npm run dev`       | Starts the Next.js development server with hot reloading.                          |
+| `npm run build`     | Creates an optimized production build.                                             |
+| `npm run start`     | Starts the production server. Run `npm run build` first.                           |
+| `npm run lint`      | Checks the project with ESLint.                                                    |
+| `npm run check`     | Runs ESLint and the TypeScript checker without changing files.                     |
+| `npm run format`    | Formats all supported project files with Prettier.                                 |
+| `npm run typecheck` | Checks TypeScript types without emitting compiled files.                           |
 
-## Learn More
+## Optional additions
 
-To learn more about Next.js, take a look at the following resources:
+The following modules can be added when a project needs them. Run each command
+from the project root and review the files and dependencies added by the shadcn
+CLI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> [!WARNING]
+> These registry URLs contain a token. Before publishing this README or making
+> the repository public, verify that the token is intended to be shared.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Database connection
 
-## Deploy on Vercel
+Adds the database connection setup:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx shadcn@latest add "https://addcn.dev/r/estyxq/db.json?token=jx7b52hezdxrg1ejtxe85fnhnd8anvc2"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Robots and sitemap
+
+Adds `robots.ts` and `sitemap.ts`:
+
+```bash
+npx shadcn@latest add "https://addcn.dev/r/estyxq/robots-sitemap.json?token=jx7b52hezdxrg1ejtxe85fnhnd8anvc2"
+```
+
+### Better Auth
+
+Adds the Better Auth setup:
+
+```bash
+npx shadcn@latest add "https://addcn.dev/r/estyxq/better-auth.json?token=jx7b52hezdxrg1ejtxe85fnhnd8anvc2"
+```
+
+### Mail
+
+Adds `mail.ts` and the mail setup:
+
+```bash
+npx shadcn@latest add "https://addcn.dev/r/estyxq/mail.json?token=jx7b52hezdxrg1ejtxe85fnhnd8anvc2"
+```
+
+### Progressive Web App
+
+Adds the PWA setup:
+
+```bash
+npx shadcn@latest add "https://addcn.dev/r/estyxq/pwa.json?token=jx7b52hezdxrg1ejtxe85fnhnd8anvc2"
+```
+
+## Before committing
+
+Run the full project check:
+
+```bash
+npm run check
+```
+
+To format the project and run all checks together:
+
+```bash
+npm run pre
+```
