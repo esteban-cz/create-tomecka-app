@@ -2,6 +2,7 @@
   "name": "create-tomecka-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "pre": "prettier --write . && eslint . && tsc --noEmit",
     "dev": "next dev",
